@@ -47,6 +47,8 @@ function interwaly() {
     id("int_again").classList.add("unavailable");
     id("int_reset").classList.add("unavailable");
     answers = [0, 0];
+    id("int_score_ok").textContent = answers[0];
+    id("int_score_all").textContent = answers[1];
     mainmenu.classList.add("hiding");
     setTimeout(function() {
         mainmenu.classList.add("hidden");
@@ -98,6 +100,7 @@ function int_start() {
     id("int_again").classList.remove("unavailable");
     id("int_reset").classList.remove("unavailable");
     exitstate = function() {
+        answers = [0, 0];
         state = 0;
     }
     setTimeout(int_round, 0);
