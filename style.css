@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline-style: none;
+}
+
+body {
+    color: #fff;
+    background-color: #262360;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+a, a:visited, a:hover, a:active {
+    color: #77F;
+}
+.overlay {
+    display: flex;
+    opacity: .5;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+}
+.overlay .text {
+    margin: auto;
+    color: white;
+    font-size: 30pt;
+}
+.wrong {
+    font-size: 20pt;
+    background-color: darkred !important;
+    padding: 15pt;
+    color: white;
+}
+.container {
+    max-width: 500pt;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    transition: opacity ease .2s;
+}
+.hiding, .hidden {
+    opacity: 0;
+}
+.hidden {
+    display:none;
+}
+.section {
+    display: block;
+    margin-top: 15pt;
+    margin-bottom: 15pt;
+}
+.box {
+    background-color: #14233b;
+    padding: 10pt;
+    border: 2pt #000 solid;
+}
+
+.inline_button_container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.return {color: #AAA;}
+
+.button {
+    text-transform: uppercase;
+    display: block;
+    overflow: hidden;
+    padding: 7pt;
+    margin: 3pt;
+    background: #303030;
+    border: 2pt #000 solid;
+    font-size: 15pt;
+    width: 100%;
+    text-align: center;
+}
+.important_buttons .button {
+    font-weight: bold;
+    border: 6pt #000 solid;
+}
+.button:hover {
+    background-color: #555;
+    border-color: #444;
+    transition: background-color ease .4s;
+    transition: border ease .4s;
+}
+.button:active {
+    background-color: #444;
+    transition: background-color ease .2s;
+}
+.button_chosen {
+    background: #bebebe;
+    color: black;
+}
+.button_chosen:hover {
+    background-color: #EEE;
+}
+.pres_button {
+    display: block;
+    margin: 3pt;
+    background: #BBB;
+    border: 2pt #000 solid;
+    font-size: 20pt;
+    width: 100%;
+    text-align: center;
+}
+.pres_button_img {
+    height: 50pt;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#int_mel .pres_button_img {
+    background-image: url("int_mel.png");
+}
+#int_harm .pres_button_img {
+    background-image: url("int_harm.png");
+}
+#int_melharm .pres_button_img {
+    background-image: url("int_melharm.png");
+}
+.pres_button_chosen {
+    background-color: #EEE;
+}
+.unavailable {
+    color: #AAA;
+    /*text-decoration: line-through;*/
+}
+
+.title {
+    font-size: 45pt;
+    text-align: center;
+}
+
+.beta {
+    font-size: 0.4em;
+}
+
+.credits {
+    font-size: 0.7em;
+}
+
+.score {
+    text-align: center;
+    font-size: 60pt;
+}
+
+#int_score_ok {
+    color: green;
+}

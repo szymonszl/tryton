@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tryton</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="Base64.js"></script>
+        <script src="Base64binary.js"></script>
+        <script src="WebAudioAPI.js"></script>
+        <script src="MIDI.min.js"></script>
+        <script src="tryton.js"></script>
+    </head>
+    <body class="home">
+        <div class="overlay" id="loadingoverlay">
+            <div class="text">Ładowanie...</div>
+        </div>
+        <div class="container" id="mainmenu">
+            <h1 class="section title">Tryton <span class="beta">beta</span></h1>
+            <div class="section box">
+                <p>
+                    <i>Tryton</i> to narzędzie pomagające w ćwiczeniach kształcenia słuchu cośtam cośtam
+                    lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    At ducimus, iure ipsum eos voluptatum eius nihil modi quos maxime corporis distinctio
+                    deleniti vitae id, dolores nesciunt pariatur quo inventore neque.
+                </p>
+            </div>
+            <div class="section button_container important_buttons">
+                <div class="button" id="b_inter">Interwały</div>
+                <div class="button unavailable" id="b_troj">Trójdźwięki</div>
+                <div class="button unavailable" id="b_trojprz">Trójdźwięki z przewrotami</div>
+                <div class="button unavailable" id="b_ton">Tonacje</div>
+            </div>
+            <div class="section box credits">
+                &copy; Szymon Szleng 2020<br>
+                Based on <a href="https://github.com/mudcube/MIDI.js/">MIDI.js</a><br>
+                Using <a href="https://github.com/gleitz/midi-js-soundfonts">Fluid</a> soundfont.
+            </div>
+        </div>
+        <div class="container hiding hidden" id="interwaly">
+            <h2 class="section box">Interwały <span class="return">[powrót]</span></h2>
+            <div class="section box score">
+                <span id="int_score_ok">0</span>/<span id="int_score_all">0</span>
+            </div>
+            <div class="section inline_button_container important_buttons">
+                <div class="button" id="int_start">Start</div>
+                <div class="button unavailable" id="int_again">Powtórz</div>
+                <div class="button unavailable" id="int_reset">Reset</div>
+            </div>
+            <div class="section inline_button_container">
+                <div class="pres_button pres_button_chosen" id="int_mel"><div class="pres_button_img"></div></div>
+                <div class="pres_button" id="int_harm"><div class="pres_button_img"></div></div>
+                <div class="pres_button" id="int_melharm"><div class="pres_button_img"></div></div>
+            </div>
+            <div class="box wrong hidden" id="int_wrong">
+                Błąd!<br>
+                Prawidłowa odpowiedź to <span id="wrongcorrect">[jeśli to czytasz to coś poszło nie tak]</span><br>
+                <div class="button" id="int_next">Następny</div>
+            </div>
+            <div class="section intervals">
+                <div class="inline_button_container">
+                    <div class="button" id="int_0">pryma czysta</div>
+                </div>
+                <div class="inline_button_container">
+                    <div class="button" id="int_1">sekunda mała</div>
+                    <div class="button" id="int_2">sekunda wielka</div>
+                </div>
+                <div class="inline_button_container">
+                    <div class="button" id="int_3">tercja mała</div>
+                    <div class="button" id="int_4">tercja wielka</div>
+                </div>
+                <div class="inline_button_container">
+                    <div class="button" id="int_5">kwarta czysta</div>
+                    <div class="button" id="int_6">tryton</div>
+                    <div class="button" id="int_7">kwinta czysta</div>
+                </div>
+                <div class="inline_button_container">
+                    <div class="button" id="int_8">seksta mała</div>
+                    <div class="button" id="int_9">seksta wielka</div>
+                </div>
+                <div class="inline_button_container">
+                    <div class="button" id="int_10">septyma mała</div>
+                    <div class="button" id="int_11">septyma wielka</div>
+                </div>
+                <div class="inline_button_container">
+                    <div class="button" id="int_12">oktawa czysta</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
