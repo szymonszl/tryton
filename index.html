@@ -15,6 +15,7 @@
             var _paq = window._paq || [];
             _paq.push(['trackPageView']);
             _paq.push(['enableLinkTracking']);
+            _paq.push(['enableHeartBeatTimer', 60]);
             (function() {
             var u="//tracking.szymszl.xyz/";
             _paq.push(['setTrackerUrl', u+'matomo.php']);
@@ -53,7 +54,8 @@
         <div class="container hiding hidden" id="interwaly">
             <h2 class="section box">Interwały <span class="return">[powrót]</span></h2>
             <div class="section box score">
-                <span id="int_score_ok">0</span>/<span id="int_score_all">0</span>
+                <span class="score_good" id="int_score_ok">0</span>/<span id="int_score_all">0</span>
+                <span class="score_percent" id="int_score_percent">(0%)</span>
             </div>
             <div class="section inline_button_container important_buttons">
                 <div class="button" id="int_start">Start</div>
@@ -103,7 +105,8 @@
         <div class="container hiding hidden" id="trojdzwieki">
             <h2 class="section box">Trójdźwięki <span class="return">[powrót]</span></h2>
             <div class="section box score">
-                <span id="tri_score_ok">0</span>/<span id="tri_score_all">0</span>
+                <span class="score_good" id="tri_score_ok">0</span>/<span id="tri_score_all">0</span>
+                <span class="score_percent" id="tri_score_percent">(0%)</span>
             </div>
             <div class="section inline_button_container important_buttons">
                 <div class="button" id="tri_start">Start</div>

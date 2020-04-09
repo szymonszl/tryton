@@ -20,6 +20,7 @@ try {
 } catch (e) {
     console.error(e);
     document.querySelector(".overlay .text").textContent = "Wystąpił błąd!";
+    window._paq.push(["trackEvent", "loadingError", "exception", e.toString()]);
 }
 const mainmenu = id("mainmenu");
 const intcontainer = id("interwaly");
@@ -76,6 +77,19 @@ document.querySelectorAll(".pres_button_melharm").forEach(x=>x.addEventListener(
     )
 }));
 
+function show_score(prefix) {
+    id(prefix+"_score_ok").textContent = answers[0];
+    id(prefix+"_score_all").textContent = answers[1];
+    if (answers[1] > 0) {
+        id(prefix+"_score_percent").textContent = `(${Math.round((answers[0]/answers[1])*100)}%)`;
+    } else {
+        id(prefix+"_score_percent").textContent = '(0%)';
+    }
+}
+
+/////////////////////
+// INTERWAŁY
+/////////////////////
 
 function interwaly() {
     id("int_start").classList.remove("unavailable");
@@ -83,8 +97,7 @@ function interwaly() {
     id("int_reset").classList.add("unavailable");
     id("int_wrong").classList.add("hidden");
     answers = [0, 0];
-    id("int_score_ok").textContent = answers[0];
-    id("int_score_all").textContent = answers[1];
+    show_score("int");
     mainmenu.classList.add("hiding");
     setTimeout(function() {
         mainmenu.classList.add("hidden");
@@ -126,20 +139,24 @@ function play_interval() {
 }
 function int_round() {
     generate_interval();
+    state = 2;
     play_interval();
 }
 function int_start() {
     if (state != 1) return;
     answers = [0, 0];
+    show_score("tri");
     state = 2;
     id("int_start").classList.add("unavailable");
     id("int_again").classList.remove("unavailable");
     id("int_reset").classList.remove("unavailable");
     setTimeout(int_round, 0);
+    window._paq.push(["trackEvent", "startPractice", "intervals"]);
 }
 function int_reset() {
     if (state != 2) return;
     answers = [0, 0];
+    show_score("tri");
     state = 1;
     id("int_start").classList.remove("unavailable");
     id("int_again").classList.add("unavailable");
@@ -156,14 +173,14 @@ function int_answer(num) {
         if (num == int[2]) {
             answers[0]++;
             answers[1]++;
-            id("int_score_ok").textContent = answers[0];
-            id("int_score_all").textContent = answers[1];
+            show_score("int");
+            state = 3;
             setTimeout(int_round, NOTE_DELAY*1.5);
         } else {
             id("int_wrongcorrect").textContent = ints[int[2]];
             id("int_wrong").classList.remove("hidden");
             answers[1]++;
-            id("int_score_all").textContent = answers[1];
+            show_score("int");
             state = 3;
         }
     }
@@ -187,13 +204,13 @@ tris = ["durowy", "molowy", "zmniejszony", "zwiększony"];
 
 
 function trojdzwieki() {
+    window._paq.push(["trackEvent", "startPractice", "triads"]);
     id("tri_start").classList.remove("unavailable");
     id("tri_again").classList.add("unavailable");
     id("tri_reset").classList.add("unavailable");
     id("tri_wrong").classList.add("hidden");
     answers = [0, 0];
-    id("tri_score_ok").textContent = answers[0];
-    id("tri_score_all").textContent = answers[1];
+    show_score("tri");
     mainmenu.classList.add("hiding");
     setTimeout(function() {
         mainmenu.classList.add("hidden");
@@ -253,15 +270,18 @@ function tri_round() {
 function tri_start() {
     if (state != 11) return;
     answers = [0, 0];
+    show_score("tri");
     state = 12;
     id("tri_start").classList.add("unavailable");
     id("tri_again").classList.remove("unavailable");
     id("tri_reset").classList.remove("unavailable");
     setTimeout(tri_round, 0);
+    window._paq.push(["trackEvent", "startPractice", "intervals"]);
 }
 function tri_reset() {
     if (state != 12) return;
     answers = [0, 0];
+    show_score("tri");
     state = 11;
     id("tri_start").classList.remove("unavailable");
     id("tri_again").classList.add("unavailable");
@@ -278,15 +298,14 @@ function tri_answer(num) {
         if (num == tri[1]) {
             answers[0]++;
             answers[1]++;
-            id("tri_score_ok").textContent = answers[0];
-            id("tri_score_all").textContent = answers[1];
+            show_score("tri");
             state = 13;
             setTimeout(tri_round, NOTE_DELAY*1.5);
         } else {
             id("tri_wrongcorrect").textContent = tris[tri[1]];
             id("tri_wrong").classList.remove("hidden");
             answers[1]++;
-            id("tri_score_all").textContent = answers[1];
+            show_score("tri");
             state = 13;
         }
     }
