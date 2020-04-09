@@ -4,6 +4,10 @@ function id(name) {
 const NOTE_DELAY = 1250;
 document.addEventListener("DOMContentLoaded", function() {
 
+if (!window.hasOwnProperty("_paq")) {
+    window._paq = [];
+}
+
 let midi_loaded = false;
 try {
     MIDI.loadPlugin({
@@ -204,7 +208,6 @@ tris = ["durowy", "molowy", "zmniejszony", "zwiększony"];
 
 
 function trojdzwieki() {
-    window._paq.push(["trackEvent", "startPractice", "triads"]);
     id("tri_start").classList.remove("unavailable");
     id("tri_again").classList.add("unavailable");
     id("tri_reset").classList.add("unavailable");
@@ -276,7 +279,7 @@ function tri_start() {
     id("tri_again").classList.remove("unavailable");
     id("tri_reset").classList.remove("unavailable");
     setTimeout(tri_round, 0);
-    window._paq.push(["trackEvent", "startPractice", "intervals"]);
+    window._paq.push(["trackEvent", "startPractice", "triads"]);
 }
 function tri_reset() {
     if (state != 12) return;
