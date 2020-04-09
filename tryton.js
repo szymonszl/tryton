@@ -133,7 +133,7 @@ function int_start() {
     answers = [0, 0];
     state = 2;
     id("int_start").classList.add("unavailable");
-    id("int_again").classList.add("unavailable");
+    id("int_again").classList.remove("unavailable");
     id("int_reset").classList.remove("unavailable");
     setTimeout(int_round, 0);
 }
@@ -142,7 +142,7 @@ function int_reset() {
     answers = [0, 0];
     state = 1;
     id("int_start").classList.remove("unavailable");
-    id("int_again").classList.remove("unavailable");
+    id("int_again").classList.add("unavailable");
     id("int_reset").classList.add("unavailable");
     id("int_wrong").classList.add("hidden");
 }
