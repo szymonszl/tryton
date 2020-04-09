@@ -15,7 +15,7 @@ a, a:visited, a:hover, a:active {
 }
 .overlay {
     display: flex;
-    opacity: .5;
+    opacity: .7;
     background-color: black;
     width: 100%;
     height: 100%;
@@ -24,10 +24,16 @@ a, a:visited, a:hover, a:active {
     left: 0px;
     z-index: 999;
 }
+@keyframes pulse {
+    0% { color: #FFF }
+    50% { color: #777 }
+    100% { color: #FFF }
+}
 .overlay .text {
     margin: auto;
     color: white;
     font-size: 30pt;
+    animation: pulse 2s infinite;
 }
 .wrong {
     font-size: 20pt;
@@ -123,6 +129,15 @@ a, a:visited, a:hover, a:active {
 #int_melharm .pres_button_img {
     background-image: url("int_melharm.png");
 }
+#tri_mel .pres_button_img {
+    background-image: url("tri_mel.png");
+}
+#tri_harm .pres_button_img {
+    background-image: url("tri_harm.png");
+}
+#tri_melharm .pres_button_img {
+    background-image: url("tri_melharm.png");
+}
 .pres_button_chosen {
     background-color: #EEE;
 }
@@ -149,6 +164,6 @@ a, a:visited, a:hover, a:active {
     font-size: 60pt;
 }
 
-#int_score_ok {
+#int_score_ok, #tri_score_ok {
     color: green;
 }

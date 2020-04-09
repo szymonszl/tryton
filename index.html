@@ -25,7 +25,7 @@
             </div>
             <div class="section button_container important_buttons">
                 <div class="button" id="b_inter">Interwały</div>
-                <div class="button unavailable" id="b_troj">Trójdźwięki</div>
+                <div class="button" id="b_troj">Trójdźwięki</div>
                 <div class="button unavailable" id="b_trojprz">Trójdźwięki z przewrotami</div>
                 <div class="button unavailable" id="b_ton">Tonacje</div>
             </div>
@@ -47,12 +47,12 @@
             </div>
             <div class="section inline_button_container">
                 <div class="pres_button pres_button_chosen" id="int_mel"><div class="pres_button_img"></div></div>
-                <div class="pres_button" id="int_harm"><div class="pres_button_img"></div></div>
-                <div class="pres_button" id="int_melharm"><div class="pres_button_img"></div></div>
+                <div class="pres_button pres_button_harm" id="int_harm"><div class="pres_button_img"></div></div>
+                <div class="pres_button pres_button_melharm" id="int_melharm"><div class="pres_button_img"></div></div>
             </div>
             <div class="box wrong hidden" id="int_wrong">
                 Błąd!<br>
-                Prawidłowa odpowiedź to <span id="wrongcorrect">[jeśli to czytasz to coś poszło nie tak]</span><br>
+                Prawidłowa odpowiedź to <span id="int_wrongcorrect">[jeśli to czytasz to coś poszło nie tak]</span><br>
                 <div class="button" id="int_next">Następny</div>
             </div>
             <div class="section intervals">
@@ -82,6 +82,37 @@
                 </div>
                 <div class="inline_button_container">
                     <div class="button" id="int_12">oktawa czysta</div>
+                </div>
+            </div>
+        </div>
+        <div class="container hiding hidden" id="trojdzwieki">
+            <h2 class="section box">Trójdźwięki <span class="return">[powrót]</span></h2>
+            <div class="section box score">
+                <span id="tri_score_ok">0</span>/<span id="tri_score_all">0</span>
+            </div>
+            <div class="section inline_button_container important_buttons">
+                <div class="button" id="tri_start">Start</div>
+                <div class="button unavailable" id="tri_again">Powtórz</div>
+                <div class="button unavailable" id="tri_reset">Reset</div>
+            </div>
+            <div class="section inline_button_container">
+                <div class="pres_button pres_button_mel pres_button_chosen" id="tri_mel"><div class="pres_button_img"></div></div>
+                <div class="pres_button pres_button_harm" id="tri_harm"><div class="pres_button_img"></div></div>
+                <div class="pres_button pres_button_melharm" id="tri_melharm"><div class="pres_button_img"></div></div>
+            </div>
+            <div class="box wrong hidden" id="tri_wrong">
+                Błąd!<br>
+                Prawidłowa odpowiedź to <span id="tri_wrongcorrect">[jeśli to czytasz to coś poszło nie tak]</span><br>
+                <div class="button" id="tri_next">Następny</div>
+            </div>
+            <div class="section triads">
+                <div class="inline_button_container">
+                    <div class="button" id="tri_0">durowy</div>
+                    <div class="button" id="tri_1">molowy</div>
+                </div>
+                <div class="inline_button_container">
+                    <div class="button" id="tri_2">zmniejszony</div>
+                    <div class="button" id="tri_3">zwiększony</div>
                 </div>
             </div>
         </div>
