@@ -371,7 +371,7 @@ function trp_start() {
     id("trp_again").classList.remove("unavailable");
     id("trp_reset").classList.remove("unavailable");
     setTimeout(trp_round, 0);
-    window._paq.push(["trackEvent", "startPractice", "trpads"]);
+    window._paq.push(["trackEvent", "startPractice", "inversions"]);
 }
 function trp_reset() {
     if (state != 22) return;
