@@ -42,7 +42,7 @@
             <div class="section button_container important_buttons">
                 <div class="button" id="b_inter">Interwały</div>
                 <div class="button" id="b_troj">Trójdźwięki</div>
-                <div class="button unavailable" id="b_trojprz">Trójdźwięki z przewrotami</div>
+                <div class="button" id="b_trojprz">Trójdźwięki z&nbsp;przewrotami</div>
                 <div class="button unavailable" id="b_ton">Tonacje</div>
             </div>
             <div class="section box credits">
@@ -131,6 +131,45 @@
                 <div class="inline_button_container">
                     <div class="button" id="tri_2">zmniejszony</div>
                     <div class="button" id="tri_3">zwiększony</div>
+                </div>
+            </div>
+        </div>
+        <div class="container hiding hidden" id="trojprzewroty">
+            <h2 class="section box">Trójdźwięki z&nbsp;przewrotami <span class="return">[powrót]</span></h2>
+            <div class="section box score">
+                <span class="score_good" id="trp_score_ok">0</span>/<span id="trp_score_all">0</span>
+                <span class="score_percent" id="trp_score_percent">(0%)</span>
+            </div>
+            <div class="section inline_button_container important_buttons">
+                <div class="button" id="trp_start">Start</div>
+                <div class="button unavailable" id="trp_again">Powtórz</div>
+                <div class="button unavailable" id="trp_reset">Reset</div>
+            </div>
+            <div class="section inline_button_container">
+                <div class="pres_button pres_button_mel pres_button_chosen" id="tri_mel"><div class="pres_button_img"></div></div>
+                <div class="pres_button pres_button_harm" id="tri_harm"><div class="pres_button_img"></div></div>
+                <div class="pres_button pres_button_melharm" id="tri_melharm"><div class="pres_button_img"></div></div>
+            </div>
+            <div class="box wrong hidden" id="trp_wrong">
+                Błąd!<br>
+                Prawidłowa odpowiedź to <span id="trp_wrongcorrect">[jeśli to czytasz to coś poszło nie tak]</span><br>
+                <div class="button" id="trp_next">Następny</div>
+            </div>
+            <div class="section trpads">
+                <div class="inline_button_container">
+                    <div class="button" id="trp_0">+</div>
+                    <div class="button" id="trp_1">+3</div>
+                    <div class="button" id="trp_2">+5</div>
+                </div>
+                <div class="inline_button_container">
+                    <div class="button" id="trp_3">-</div>
+                    <div class="button" id="trp_4">-3</div>
+                    <div class="button" id="trp_5">-5</div>
+                </div>
+                <div class="inline_button_container">
+                    <div class="button" id="trp_6">zmniejszony</div>
+                    <div class="button" id="trp_7">zwiększony</div>
+                    <div class="button" id="trp_8">septymowy</div>
                 </div>
             </div>
         </div>
