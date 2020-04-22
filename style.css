@@ -87,7 +87,7 @@ a, a:visited, a:hover, a:active {
     margin-top: 3pt;
     margin-bottom: 3pt;
     background: #303030;
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(48,48,48,1) 52%);
+    background: linear-gradient(0deg, #000 0%, #333 52%);
     border: 2pt #000 solid;
     font-size: 15pt;
     width: 100%;
@@ -102,7 +102,8 @@ a, a:visited, a:hover, a:active {
     border: 4pt #000 solid;
 }
 .button:hover {
-    background-color: #555;
+    background: #555;
+    background: linear-gradient(0deg, #555 0%, #777 52%);
     border-color: #444;
     transition: background-color ease .4s;
     transition: border ease .4s;
